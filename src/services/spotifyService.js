@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const SPOTIFY_API_BASE_URL = 'https://api.spotify.com/v1';
+const API_BASE_URL = 'http://localhost:3001/api';
 
 export const spotifyService = {
   getAccessToken: () => {
@@ -24,22 +24,15 @@ export const spotifyService = {
     window.location.href = authUrl;
   },
 
-  getLikedSongs: async (accessToken, offset = 0, limit = 20) => {
+  getLikedSongs: async (offset = 0, limit = 20) => {
     try {
-      const response = await axios.get(`${SPOTIFY_API_BASE_URL}/me/tracks`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
+      const response = await axios.get(`${API_BASE_URL}/liked-songs`, {
         params: {
           limit,
           offset,
         },
       });
-      return {
-        songs: response.data.items.map(item => item.track),
-        total: response.data.total,
-        next: response.data.next,
-      };
+      return response.data;
     } catch (error) {
       console.error('Error fetching liked songs:', error);
       throw error;

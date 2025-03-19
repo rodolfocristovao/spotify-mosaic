@@ -13,12 +13,7 @@ const LikedSongs = () => {
 
   const fetchSongs = async (currentOffset = 0) => {
     try {
-      const accessToken = spotifyService.getAccessToken();
-      if (!accessToken) {
-        spotifyService.login();
-        return;
-      }
-      const response = await spotifyService.getLikedSongs(accessToken, currentOffset);
+      const response = await spotifyService.getLikedSongs(currentOffset);
       setSongs(prev => currentOffset === 0 ? response.songs : [...prev, ...response.songs]);
       setHasMore(!!response.next);
       setOffset(currentOffset + response.songs.length);
@@ -66,7 +61,7 @@ const LikedSongs = () => {
 
   return (
     <div className="liked-songs">
-      <h1>Your Liked Songs</h1>
+      <h1>My Liked Songs</h1>
       <div className="songs-grid">
         {songs.map((song) => (
           <a 
