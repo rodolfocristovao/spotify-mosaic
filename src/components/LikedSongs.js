@@ -66,20 +66,20 @@ const LikedSongs = () => {
         {songs.map((song) => (
           <a 
             key={song.id} 
-            href={song.external_urls.spotify}
+            href={song.spotify_url}
             target="_blank"
             rel="noopener noreferrer"
             className="song-card"
           >
             <img
-              src={song.album.images[0]?.url}
-              alt={song.album.name}
+              src={song.album_art_url}
+              alt={song.album}
               className="album-art"
             />
             <div className="song-info">
               <h3>{song.name}</h3>
-              <p>{song.artists.map(artist => artist.name).join(', ')}</p>
-              <p className="album-name">{song.album.name}</p>
+              <p>{song.artist}</p>
+              <p className="album-name">{song.album}</p>
             </div>
           </a>
         ))}
