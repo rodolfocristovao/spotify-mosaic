@@ -61,7 +61,22 @@ const LikedSongs = () => {
 
   return (
     <div className="liked-songs">
-      <h1>My Liked Songs</h1>
+      <h1>Spotify Liked Songs by Rodolfo</h1>
+      <p className="description">
+        A visualization of your favorite tracks. This app fetches my liked songs from Spotify and displays them in a beautiful mosaic layout. The data is automatically updated every 24 hours to keep your collection current.
+      </p>
+      <div className="technical-details">
+        <h2>Technical Details</h2>
+        <ul>
+          <li>Built with Cursor AI and React</li>
+          <li>Spotify OAuth 2.0</li>
+          <li>Infinite Scroll</li>
+          <li>SQLite DB</li>
+          <li>Responsive Grid</li>
+          <li>Direct Spotify Links</li>
+          <li>Lazy Loading</li>
+        </ul>
+      </div>
       <div className="songs-grid">
         {songs.map((song) => (
           <a 
