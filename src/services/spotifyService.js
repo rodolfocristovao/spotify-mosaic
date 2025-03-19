@@ -14,7 +14,7 @@ export const spotifyService = {
       return response.data;
     } catch (error) {
       console.error('Error fetching featured playlists:', error);
-      throw error;
+      throw new Error(error.response?.data?.message || error.message || 'Failed to fetch featured playlists');
     }
   },
   getLikedSongs: async (offset = 0, limit = 20) => {
@@ -28,7 +28,9 @@ export const spotifyService = {
       return response.data;
     } catch (error) {
       console.error('Error fetching liked songs:', error);
-      throw error;
+      const errorMessage = error.response?.data?.message || error.message || 'Failed to fetch liked songs';
+      const statusCode = error.response?.status;
+      throw new Error(`${errorMessage}${statusCode ? ` (Status: ${statusCode})` : ''}`);
     }
   },
 }; 

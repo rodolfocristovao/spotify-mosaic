@@ -17,8 +17,9 @@ const LikedSongs = () => {
       setSongs(prev => currentOffset === 0 ? response.songs : [...prev, ...response.songs]);
       setHasMore(!!response.next);
       setOffset(currentOffset + response.songs.length);
+      setError(null);
     } catch (err) {
-      setError('Failed to fetch liked songs');
+      setError(err.message);
       console.error(err);
     } finally {
       setLoading(false);
@@ -57,7 +58,17 @@ const LikedSongs = () => {
   }, [hasMore, loadingMore, offset]);
 
   if (loading && !loadingMore) return <div className="loading">Loading...</div>;
-  if (error) return <div className="error">{error}</div>;
+  if (error) return (
+    <div className="error-container">
+      <div className="error">
+        <h2>Error Loading Songs</h2>
+        <p>{error}</p>
+        <button onClick={() => fetchSongs()} className="retry-button">
+          Try Again
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     <div className="liked-songs">
