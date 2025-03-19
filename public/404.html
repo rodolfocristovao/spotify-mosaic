@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Spotify Liked Songs Mosaic - A visualization of your favorite tracks"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Spotify Liked Songs by Rodolfo</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      var r = l.pathname.split('/').slice(1);
+      var s = r.slice(0, pathSegmentsToKeep).join('/') + '/';
+      var m = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/');
+      var f = l.search;
+      var d = l.hash;
+      var c = l.href;
+      var x = l.origin + '/' + s + m + f + d;
+      var y = c.indexOf(m);
+      if (y == -1) {
+        window.location.reload();
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html> 
