@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { spotifyService } from '../services/spotifyService';
 import './LikedSongs.css';
+import packageJson from '../../package.json';
 
 const LikedSongs = () => {
   const [songs, setSongs] = useState([]);
@@ -72,6 +73,7 @@ const LikedSongs = () => {
 
   return (
     <div className="liked-songs">
+      <div className="version-tag">v{packageJson.version}</div>
       <h1>Spotify Liked Songs by Rodolfo</h1>
       <p className="description">
         A visualization of your favorite tracks. This app fetches my liked songs from Spotify and displays them in a beautiful mosaic layout. The data is automatically updated every 24 hours to keep your collection current.
