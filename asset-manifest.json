@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/spotify-mosaic/static/css/main.a1a3c72f.css",
-    "main.js": "/spotify-mosaic/static/js/main.2ea2ba48.js",
+    "main.js": "/spotify-mosaic/static/js/main.611ed340.js",
     "static/js/453.43c16993.chunk.js": "/spotify-mosaic/static/js/453.43c16993.chunk.js",
     "index.html": "/spotify-mosaic/index.html",
     "main.a1a3c72f.css.map": "/spotify-mosaic/static/css/main.a1a3c72f.css.map",
-    "main.2ea2ba48.js.map": "/spotify-mosaic/static/js/main.2ea2ba48.js.map",
+    "main.611ed340.js.map": "/spotify-mosaic/static/js/main.611ed340.js.map",
     "453.43c16993.chunk.js.map": "/spotify-mosaic/static/js/453.43c16993.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a1a3c72f.css",
-    "static/js/main.2ea2ba48.js"
+    "static/js/main.611ed340.js"
   ]
 }
