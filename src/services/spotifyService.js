@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://spotify-mosaic-backend.vercel.app/api'
+  ? 'https://spotify-mosaic-backend-rodolfocristovao.vercel.app/api'
   : 'http://localhost:3001/api';
 
 export const spotifyService = {
