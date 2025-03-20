@@ -1,6 +1,6 @@
 {
   "name": "spotify-mosaic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "homepage": "https://rodolfocristovao.github.io/spotify-mosaic",
   "dependencies": {
